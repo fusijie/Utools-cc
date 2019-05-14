@@ -2,7 +2,7 @@
  * @Author: JackyFu 
  * @Date: 2019-05-14 11:18:54 
  * @Last Modified by: JackyFu
- * @Last Modified time: 2019-05-14 12:06:03
+ * @Last Modified time: 2019-05-14 12:12:06
  */
 
 const {
@@ -30,7 +30,7 @@ utools.onPluginEnter(({
     // console.log('用户进入插件', code, type, payload);
     utools.setSubInput((data) => {
         projectName = data.text;
-    }, "请输入项目名字");
+    }, "请输入 Cocos Creator 项目名字");
 });
 
 //监听回车
