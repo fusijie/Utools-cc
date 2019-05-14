@@ -2,17 +2,16 @@
  * @Author: JackyFu 
  * @Date: 2019-05-14 11:18:54 
  * @Last Modified by: JackyFu
- * @Last Modified time: 2019-05-14 12:12:06
+ * @Last Modified time: 2019-05-14 13:10:55
  */
 
-const {
-    exec
-} = require('child_process');
+const child_process = require("child_process");
+const fs = require("fs");
 
 let projectName = "";
 
 window.exec = function (command, callback) {
-    exec(command, (err, stdout, stderr) => {
+    child_process.exec(command, (err, stdout, stderr) => {
         if (err) {
             callback(stderr);
             return;
@@ -37,10 +36,15 @@ utools.onPluginEnter(({
 document.onkeydown = function (e) {
     var keyCode = window.event ? e.keyCode : e.which
     if (keyCode == 13) {
-        if (projectName === '') {
+        if (projectName === "") {
             return;
         }
-        window.exec(`/Applications/CocosCreator.app/Contents/MacOS/CocosCreator --path ~/Project/${projectName} --nologin`);
+        let projectPath = utools.getPath("home") + `/Project/${projectName}`;
+        if (!fs.existsSync(projectPath)) {
+            utools.showNotification(`项目 ${projectName} 不存在`);
+            return;
+        }
+        window.exec(`/Applications/CocosCreator.app/Contents/MacOS/CocosCreator --path ${projectPath} --nologin`);
         utools.outPlugin();
         utools.hideMainWindow();
     }
