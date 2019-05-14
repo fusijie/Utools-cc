@@ -1,6 +1,10 @@
 {
     "pluginName": "CocosCreator",
     "description": "CocosCreator插件",
+    "author": "fusijie",
+    "homepage": "https://github.com/fusijie/Utools-cc",
+    "logo": "logo.png",
+    "platform": ["darwin"],
     "main": "index.html",
     "preload": "preload.js",
     "version": "0.0.1",
