@@ -2,7 +2,7 @@
     "pluginName": "CocosCreator",
     "description": "CocosCreator插件",
     "author": "fusijie",
-    "homepage": "https://github.com/fusijie/Utools-cc",
+    "homepage": "https://github.com/fusijie/uTools-cc",
     "logo": "logo.png",
     "platform": ["darwin"],
     "main": "index.html",
