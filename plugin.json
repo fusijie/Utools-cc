@@ -1,0 +1,15 @@
+{
+    "pluginName": "CocosCreator",
+    "description": "CocosCreator插件",
+    "main": "index.html",
+    "preload": "preload.js",
+    "version": "0.0.1",
+    "features": [{
+        "code": "cc",
+        "cmds": ["cc"],
+        "explain": "打开 Cocos Creator 项目"
+    }],
+    "pluginSetting": {
+        "height": 1
+    }
+}
